@@ -2,16 +2,21 @@ group 'com.gonoter.flutter_beep'
 version '1.0'
 
 buildscript {
+    ext {
+        kotlin_version = "1.9.0"
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     namespace "com.gonoter.flutter_beep"
@@ -30,5 +35,6 @@ android {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.annotation:annotation:1.7.0'
 }
