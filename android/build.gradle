@@ -7,30 +7,22 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.0' // Align with app's Gradle
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0' // Add Kotlin plugin
+        classpath 'com.android.tools.build:gradle:8.7.0'
     }
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     namespace "com.gonoter.flutter_beep"
     compileSdk 36
     defaultConfig {
-        minSdk 24 // Align with app's minSdk
+        minSdk 24
         targetSdk 36
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -38,5 +30,5 @@ android {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+    implementation 'androidx.annotation:annotation:1.7.0'
 }
