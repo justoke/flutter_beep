@@ -1,2 +1,3 @@
 <manifest package="com.gonoter.flutter_beep">
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 </manifest>
